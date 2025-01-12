@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4420E7402D3340E900F2BA01 /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420E73F2D3340E900F2BA01 /* AddFoodView.swift */; };
+		4420E7422D334E0B00F2BA01 /* MealListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420E7412D334E0B00F2BA01 /* MealListView.swift */; };
+		4420E7442D334FAA00F2BA01 /* NutritionGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420E7432D334FAA00F2BA01 /* NutritionGroupView.swift */; };
+		4420E7462D33514600F2BA01 /* NutritionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420E7452D33514600F2BA01 /* NutritionView.swift */; };
 		444991692D30601200CE9D3F /* CalorieTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444991682D30601200CE9D3F /* CalorieTrackerApp.swift */; };
 		4449916B2D30601200CE9D3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4449916A2D30601200CE9D3F /* ContentView.swift */; };
 		4449916D2D30601500CE9D3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4449916C2D30601500CE9D3F /* Assets.xcassets */; };
@@ -34,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4420E73F2D3340E900F2BA01 /* AddFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
+		4420E7412D334E0B00F2BA01 /* MealListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListView.swift; sourceTree = "<group>"; };
+		4420E7432D334FAA00F2BA01 /* NutritionGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionGroupView.swift; sourceTree = "<group>"; };
+		4420E7452D33514600F2BA01 /* NutritionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionView.swift; sourceTree = "<group>"; };
 		444991652D30601200CE9D3F /* CalorieTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalorieTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		444991682D30601200CE9D3F /* CalorieTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieTrackerApp.swift; sourceTree = "<group>"; };
 		4449916A2D30601200CE9D3F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +79,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4420E73E2D3340C200F2BA01 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4420E73F2D3340E900F2BA01 /* AddFoodView.swift */,
+				4420E7412D334E0B00F2BA01 /* MealListView.swift */,
+				4420E7432D334FAA00F2BA01 /* NutritionGroupView.swift */,
+				4420E7452D33514600F2BA01 /* NutritionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		4449915C2D30601100CE9D3F = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +113,7 @@
 		444991672D30601200CE9D3F /* CalorieTracker */ = {
 			isa = PBXGroup;
 			children = (
+				4420E73E2D3340C200F2BA01 /* Views */,
 				444991682D30601200CE9D3F /* CalorieTrackerApp.swift */,
 				4449916A2D30601200CE9D3F /* ContentView.swift */,
 				4449916C2D30601500CE9D3F /* Assets.xcassets */,
@@ -258,7 +278,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4449916B2D30601200CE9D3F /* ContentView.swift in Sources */,
+				4420E7442D334FAA00F2BA01 /* NutritionGroupView.swift in Sources */,
 				444991692D30601200CE9D3F /* CalorieTrackerApp.swift in Sources */,
+				4420E7462D33514600F2BA01 /* NutritionView.swift in Sources */,
+				4420E7402D3340E900F2BA01 /* AddFoodView.swift in Sources */,
+				4420E7422D334E0B00F2BA01 /* MealListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

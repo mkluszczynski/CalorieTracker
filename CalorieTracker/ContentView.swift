@@ -10,23 +10,21 @@ import SwiftUI
 struct ContentView: View {
     
     @EnvironmentObject var mealStore: MealStore
+    @StateObject var addFoodViewModel = AddFoodViewModel()
+    
     
     var body: some View {
-        List(mealStore.meals) { meal in
-            VStack(alignment: .leading) {
-                Text(meal.name)
-                    .font(.headline)
-                ForEach(meal.foods) { food in
-                    HStack {
-                        Text(food.icon)
-                        Text(food.name)
-                        Spacer()
-                        Text("\(food.calories) kcal")
-                            .foregroundColor(.gray)
-                    }
-                }
+        NavigationStack{
+            VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
+                Text("🍏 FitTracker")
+                MealListView()
+                NutritionGroupView()
+            }
+            .navigationDestination(for: Meal.self){ meal in
+                AddFoodView(meal: meal)
             }
         }
+        
     }
 }
 
@@ -59,4 +57,7 @@ struct Meal: Identifiable, Hashable {
     let id: UUID = UUID()
     let name: String
     let foods: [Food]
+    
 }
+
+
