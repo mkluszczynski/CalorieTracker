@@ -13,6 +13,8 @@ struct CalorieTrackerApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(MealStore())
+                .environmentObject(FoodStore())
+                .environmentObject(NutritionStore())
         }
     }
 }

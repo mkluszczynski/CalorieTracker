@@ -1,105 +1,44 @@
 import SwiftUI
 
-import SwiftUI
-
 struct AddFoodView: View {
     @EnvironmentObject var mealStore: MealStore
+    @EnvironmentObject var foodStore: FoodStore
+    @EnvironmentObject var nutritionStore: NutritionStore
+    
     @State private var searchText: String = ""
+    
+    @Environment(\.dismiss) var dismiss
+    
     var meal: Meal
-
-    private func addFoodToMeal(food: Food) {
-        guard let index = mealStore.meals.firstIndex(where: { $0.id == meal.id }),
-              !mealStore.meals[index].foods.contains(where: { $0.id == food.id }) else {
-            return
+    
+    var filteredFoods: [Food] {
+        guard !self.searchText.isEmpty else {
+            return self.foodStore.smallFoods
         }
-        mealStore.meals[index].foods.append(food)
+        return self.foodStore.smallFoods.filter{
+            $0.name.localizedCaseInsensitiveContains(searchText)
+        }
     }
-
-    private func removeFoodFromMeal(food: Food) {
-        guard let index = mealStore.meals.firstIndex(where: { $0.id == meal.id }) else { return }
-        mealStore.meals[index].foods.removeAll { $0.id == food.id }
-    }
-
+    
     var body: some View {
-        VStack {
-            Text("Dodaj produkt do: \(meal.name)")
-                .font(.title2)
-                .padding()
-
-            TextField("Wyszukaj produkt", text: $searchText)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-
-            List(mealStore.availableFoods.filter {
-                searchText.isEmpty || $0.name.localizedCaseInsensitiveContains(searchText)
-            }) { food in
+        VStack{
+            AddedFoodListView(meal: meal)
+            List(filteredFoods) { food in
                 HStack {
                     Text("\(food.icon) \(food.name)")
                     Spacer()
-                    Text("\(food.calories) kcal")
+                    Text("\(String(format: "%.0f", food.calories)) kcal")
                     Button(action: {
-                        addFoodToMeal(food: food)
+                        mealStore.addFoodToMeal(mealName: meal.name, food: food)
+                        nutritionStore.addFoodNutritions(food: food)
+                        dismiss()
                     }) {
                         Image(systemName: "plus.circle")
                             .foregroundColor(.blue)
                     }
                 }
             }
-
-            Text("Łączne kalorie: \(meal.foods.reduce(0) { $0 + $1.calories }) kcal")
-                .padding()
-
-            Section(header: Text("Produkty w posiłku")) {
-                List {
-                    ForEach(meal.foods, id: \.id) { food in
-                        HStack {
-                            Text("\(food.icon) \(food.name)")
-                            Spacer()
-                            Text("\(food.calories) kcal")
-                        }
-                        .swipeActions {
-                            Button(role: .destructive) {
-                                removeFoodFromMeal(food: food)
-                            } label: {
-                                Label("Usuń", systemImage: "trash")
-                            }
-                        }
-                    }
-                }
-            }
-            .navigationBarTitle("Dodaj produkt", displayMode: .inline)
-        }
-        .padding()
-    }
-}
-
-class AddFoodViewModel: ObservableObject {
-    @Published var shouldShowAddFoodView: Bool = false
-
-    var selectedMeal: Meal = Meal(name: "", foods: []) {
-        didSet {
-            self.shouldShowAddFoodView = true
+            .searchable(text: $searchText,placement: .toolbar, prompt: "Wyszukaj potrawy")
         }
     }
-}
-
-struct AddFoodViewPreview: View {
-    @EnvironmentObject var mealStore: MealStore
-    @StateObject var addFoodViewModel = AddFoodViewModel()
-
-    var body: some View {
-        AddFoodView(meal: addFoodViewModel.selectedMeal)
-            .onAppear {
-                if let firstMeal = mealStore.meals.first {
-                    addFoodViewModel.selectedMeal = firstMeal
-                } else {
-                    addFoodViewModel.selectedMeal = Meal(name: "Brak danych", foods: [])
-                }
-            }
-    }
-}
-
-#Preview {
-    AddFoodViewPreview()
-        .environmentObject(MealStore())
 }

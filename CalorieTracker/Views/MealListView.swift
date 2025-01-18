@@ -20,19 +20,14 @@ struct MealListView: View {
                                 Text(food.icon)
                                 Text(food.name)
                                 Spacer()
-                                Text("\(food.calories) kcal")
+                                Text("\(food.calories.formatRounded(to: 0)) kcal")
                                     .foregroundColor(.gray)
                             }
                         }
                     }
-
-                    Text("Łączne kalorie: \(meal.foods.reduce(0) { $0 + $1.calories }) kcal")
-                        .fontWeight(.thin)
-                        .foregroundColor(.blue)
                 }
                 .padding(.vertical, 5)
             }
         }
-        .navigationTitle("Twoje posiłki")
     }
 }

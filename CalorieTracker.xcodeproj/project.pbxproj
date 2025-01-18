@@ -18,6 +18,15 @@
 		4449917A2D30601500CE9D3F /* CalorieTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444991792D30601500CE9D3F /* CalorieTrackerTests.swift */; };
 		444991842D30601500CE9D3F /* CalorieTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444991832D30601500CE9D3F /* CalorieTrackerUITests.swift */; };
 		444991862D30601500CE9D3F /* CalorieTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444991852D30601500CE9D3F /* CalorieTrackerUITestsLaunchTests.swift */; };
+		449FD7B92D3AD33D00E54B42 /* MealStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449FD7B82D3AD33D00E54B42 /* MealStore.swift */; };
+		449FD7BB2D3AD3CB00E54B42 /* FoodStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449FD7BA2D3AD3CB00E54B42 /* FoodStore.swift */; };
+		449FD7BD2D3AD47500E54B42 /* NutritionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449FD7BC2D3AD47500E54B42 /* NutritionStore.swift */; };
+		449FD7C12D3AD74B00E54B42 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449FD7C02D3AD74B00E54B42 /* Meal.swift */; };
+		449FD7C32D3AD75500E54B42 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449FD7C22D3AD75500E54B42 /* Food.swift */; };
+		449FD7C52D3AD76200E54B42 /* Nutrition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449FD7C42D3AD76200E54B42 /* Nutrition.swift */; };
+		449FD7C82D3B0CB500E54B42 /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449FD7C72D3B0CB500E54B42 /* Float.swift */; };
+		449FD7CA2D3B0F1500E54B42 /* AddedFoodListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449FD7C92D3B0F1500E54B42 /* AddedFoodListView.swift */; };
+		449FD7CC2D3B0F2F00E54B42 /* FoodListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449FD7CB2D3B0F2F00E54B42 /* FoodListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +61,15 @@
 		4449917F2D30601500CE9D3F /* CalorieTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalorieTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		444991832D30601500CE9D3F /* CalorieTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieTrackerUITests.swift; sourceTree = "<group>"; };
 		444991852D30601500CE9D3F /* CalorieTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		449FD7B82D3AD33D00E54B42 /* MealStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealStore.swift; sourceTree = "<group>"; };
+		449FD7BA2D3AD3CB00E54B42 /* FoodStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodStore.swift; sourceTree = "<group>"; };
+		449FD7BC2D3AD47500E54B42 /* NutritionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionStore.swift; sourceTree = "<group>"; };
+		449FD7C02D3AD74B00E54B42 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		449FD7C22D3AD75500E54B42 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		449FD7C42D3AD76200E54B42 /* Nutrition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrition.swift; sourceTree = "<group>"; };
+		449FD7C72D3B0CB500E54B42 /* Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
+		449FD7C92D3B0F1500E54B42 /* AddedFoodListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedFoodListView.swift; sourceTree = "<group>"; };
+		449FD7CB2D3B0F2F00E54B42 /* FoodListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +104,8 @@
 				4420E7412D334E0B00F2BA01 /* MealListView.swift */,
 				4420E7432D334FAA00F2BA01 /* NutritionGroupView.swift */,
 				4420E7452D33514600F2BA01 /* NutritionView.swift */,
+				449FD7C92D3B0F1500E54B42 /* AddedFoodListView.swift */,
+				449FD7CB2D3B0F2F00E54B42 /* FoodListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -113,6 +133,9 @@
 		444991672D30601200CE9D3F /* CalorieTracker */ = {
 			isa = PBXGroup;
 			children = (
+				449FD7C62D3B0CA600E54B42 /* Utils */,
+				449FD7BF2D3AD72400E54B42 /* Entities */,
+				449FD7B72D3AC5C900E54B42 /* Stores */,
 				4420E73E2D3340C200F2BA01 /* Views */,
 				444991682D30601200CE9D3F /* CalorieTrackerApp.swift */,
 				4449916A2D30601200CE9D3F /* ContentView.swift */,
@@ -145,6 +168,34 @@
 				444991852D30601500CE9D3F /* CalorieTrackerUITestsLaunchTests.swift */,
 			);
 			path = CalorieTrackerUITests;
+			sourceTree = "<group>";
+		};
+		449FD7B72D3AC5C900E54B42 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				449FD7B82D3AD33D00E54B42 /* MealStore.swift */,
+				449FD7BA2D3AD3CB00E54B42 /* FoodStore.swift */,
+				449FD7BC2D3AD47500E54B42 /* NutritionStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		449FD7BF2D3AD72400E54B42 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				449FD7C02D3AD74B00E54B42 /* Meal.swift */,
+				449FD7C22D3AD75500E54B42 /* Food.swift */,
+				449FD7C42D3AD76200E54B42 /* Nutrition.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		449FD7C62D3B0CA600E54B42 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				449FD7C72D3B0CB500E54B42 /* Float.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,12 +328,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				449FD7CC2D3B0F2F00E54B42 /* FoodListView.swift in Sources */,
+				449FD7C32D3AD75500E54B42 /* Food.swift in Sources */,
+				449FD7C12D3AD74B00E54B42 /* Meal.swift in Sources */,
+				449FD7C52D3AD76200E54B42 /* Nutrition.swift in Sources */,
+				449FD7BD2D3AD47500E54B42 /* NutritionStore.swift in Sources */,
+				449FD7B92D3AD33D00E54B42 /* MealStore.swift in Sources */,
+				449FD7CA2D3B0F1500E54B42 /* AddedFoodListView.swift in Sources */,
 				4449916B2D30601200CE9D3F /* ContentView.swift in Sources */,
 				4420E7442D334FAA00F2BA01 /* NutritionGroupView.swift in Sources */,
 				444991692D30601200CE9D3F /* CalorieTrackerApp.swift in Sources */,
 				4420E7462D33514600F2BA01 /* NutritionView.swift in Sources */,
+				449FD7C82D3B0CB500E54B42 /* Float.swift in Sources */,
 				4420E7402D3340E900F2BA01 /* AddFoodView.swift in Sources */,
 				4420E7422D334E0B00F2BA01 /* MealListView.swift in Sources */,
+				449FD7BB2D3AD3CB00E54B42 /* FoodStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,21 +1,17 @@
 import SwiftUI
 
 struct NutritionGroupView: View {
-    @EnvironmentObject var mealStore: MealStore
-
+    @EnvironmentObject var nutritionStore: NutritionStore
+    
     var body: some View {
         HStack {
-            ForEach(mealStore.nutritionSummary) { nutrition in
-                NutritionView(name: nutrition.name, value: nutrition.value, target: nutrition.target)
-            }
+            NutritionView(name: "Kalorie", nutrition: nutritionStore.calories)
+            NutritionView(name: "Białko", nutrition: nutritionStore.proteins)
+            NutritionView(name: "Tłuszcz", nutrition: nutritionStore.fat)
+            NutritionView(name: "Węgle", nutrition: nutritionStore.carbohydrates)
         }
         .padding(10)
     }
 }
 
-struct Nutrition: Identifiable {
-    let id: UUID = UUID()
-    let name: String
-    let value: Int
-    let target: Int
-}
+

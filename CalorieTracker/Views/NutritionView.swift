@@ -1,19 +1,24 @@
 import SwiftUI
+
 struct NutritionView: View {
     let name: String
-    let value: Int
-    let target: Int
+    let nutrition: Nutrition
 
     var body: some View {
-        VStack {
-            Text(name)
-                .font(.headline)
-            Text("\(value) / \(target)")
-                .font(.subheadline)
-                .foregroundColor(.gray)
-            ProgressView(value: Float(value), total: Float(target))
-                .progressViewStyle(LinearProgressViewStyle())
+        VStack{
+            VStack{
+                HStack(alignment: .firstTextBaseline){
+                    Text( name)
+                        .font(.system(size: 15))
+                    Text("\(nutrition.value.formatRounded(to: 0))")
+                        .font(.system(size: 15))
+                        .bold()
+                }
+                Text("/ \(nutrition.target.formatRounded(to: 0))")
+            }
+            .scaledToFit()
+            .minimumScaleFactor(0.5)
+            ProgressView(value: nutrition.value, total: nutrition.target)
         }
-        .padding()
     }
 }
