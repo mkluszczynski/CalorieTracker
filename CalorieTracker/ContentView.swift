@@ -18,7 +18,7 @@ struct ContentView: View {
             VStack(alignment: .center) {
                 Text("🍏 FitTracker")
                     .padding()
-                DatePicker("Wybierz datę:", selection: $date, in: ...Date(), displayedComponents: .date)
+                DatePicker("Select date:", selection: $date, in: ...Date(), displayedComponents: .date)
                     .padding(.horizontal)
                 
                 MealListView(meals: day.meals)
@@ -46,10 +46,10 @@ struct ContentView: View {
         let newDay = Day(date: date)
         
         let newMeals: [Meal] = [
-            Meal(name: "Śniadanie", order: 1),
-            Meal(name: "Drugie śniadanie", order: 2),
-            Meal(name: "Obiad", order: 3),
-            Meal(name: "Kolacja", order: 4),
+            Meal(name: "Breakfast", order: 1),
+            Meal(name: "Snack", order: 2),
+            Meal(name: "Lunch", order: 3),
+            Meal(name: "Dinner", order: 4),
         ]
         
         for meal in newMeals {

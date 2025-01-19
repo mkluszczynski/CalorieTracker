@@ -10,7 +10,7 @@ struct AddedFoodListView: View {
     var body: some View {
         VStack{
             if meal.foods.isEmpty {
-                            Text("No food added")
+                            Text("No products added")
                                 .foregroundColor(.gray)
                                 .italic()
                                 .padding()

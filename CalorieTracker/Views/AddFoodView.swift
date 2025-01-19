@@ -41,7 +41,7 @@ struct AddFoodView: View {
                     }
                 }
             }
-            .searchable(text: $searchText,placement: .toolbar, prompt: "Wyszukaj potrawy")
+            .searchable(text: $searchText,placement: .toolbar, prompt: "Search products:")
         }
     }
     

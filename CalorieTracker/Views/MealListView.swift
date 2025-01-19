@@ -17,7 +17,7 @@ struct MealListView: View {
                         .font(.headline)
 
                     if meal.foods.isEmpty {
-                        Text("Brak składników")
+                        Text("No products added")
                             .font(.subheadline)
                             .foregroundColor(.gray)
                     } else {

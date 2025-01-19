@@ -7,10 +7,10 @@ struct NutritionGroupView: View {
     
     var body: some View {
         HStack {
-            NutritionView(name: "Kalorie", nutrition: Nutrition(value: getCalories(), target: 2100))
-            NutritionView(name: "Białko", nutrition: Nutrition(value: getProteins(), target: 100))
-            NutritionView(name: "Tłuszcz", nutrition: Nutrition(value: getFat(), target: 70))
-            NutritionView(name: "Węgle", nutrition: Nutrition(value: getCalories(), target: 369))
+            NutritionView(name: "Calories", nutrition: Nutrition(value: getCalories(), target: 2100))
+            NutritionView(name: "Proteins", nutrition: Nutrition(value: getProteins(), target: 100))
+            NutritionView(name: "Fat", nutrition: Nutrition(value: getFat(), target: 70))
+            NutritionView(name: "Carbon", nutrition: Nutrition(value: getCarbohydrates(), target: 369))
         }
         .padding(10)
     }
