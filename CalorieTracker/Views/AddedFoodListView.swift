@@ -1,15 +1,7 @@
-//
-//  AddedFoodListView.swift
-//  CalorieTracker
-//
-//  Created by Mateusz Kluszczynski on 17/01/2025.
-//
-
 import SwiftUI
 
+@available(iOS 17, *)
 struct AddedFoodListView: View {
-    @EnvironmentObject var mealStore: MealStore
-    @EnvironmentObject var nutritionStore: NutritionStore
     
     @Environment(\.dismiss) var dismiss
     
@@ -29,9 +21,7 @@ struct AddedFoodListView: View {
                         Spacer()
                         Text("\(String(format: "%.0f", food.calories)) kcal")
                         Button(action: {
-                            //                    mealStore.addFoodToMeal(mealName: meal.name, food: food)
-                            nutritionStore.removeFoodNutrition(food: food)
-                            mealStore.removeFoodFromMeal(mealName: meal.name, food: food)
+                            removeFoodFromMeal(meal: meal, food: food)
                             dismiss()
                         }) {
                             Image(systemName: "minus.circle")
@@ -43,6 +33,12 @@ struct AddedFoodListView: View {
                 }
                 
             }
+        }
+    }
+    
+    func removeFoodFromMeal(meal: Meal, food: Food) {
+        if let foodIndex = meal.foods.firstIndex(where: { $0.id == food.id }) {
+            meal.foods.remove(at: foodIndex)
         }
     }
 }

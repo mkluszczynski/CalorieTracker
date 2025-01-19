@@ -1,21 +1,25 @@
 import SwiftUI
+import SwiftData
 
+@available(iOS 17, *)
 struct AddFoodView: View {
-    @EnvironmentObject var mealStore: MealStore
     @EnvironmentObject var foodStore: FoodStore
-    @EnvironmentObject var nutritionStore: NutritionStore
     
     @State private var searchText: String = ""
     
     @Environment(\.dismiss) var dismiss
+    @Environment(\.modelContext) var modelContext
     
     var meal: Meal
     
+    var foods: [Food] {
+        foodStore.smallFoods
+    }
+    
     var filteredFoods: [Food] {
         guard !self.searchText.isEmpty else {
-            return self.foodStore.smallFoods
-        }
-        return self.foodStore.smallFoods.filter{
+            return foods}
+        return foods.filter{
             $0.name.localizedCaseInsensitiveContains(searchText)
         }
     }
@@ -29,8 +33,7 @@ struct AddFoodView: View {
                     Spacer()
                     Text("\(String(format: "%.0f", food.calories)) kcal")
                     Button(action: {
-                        mealStore.addFoodToMeal(mealName: meal.name, food: food)
-                        nutritionStore.addFoodNutritions(food: food)
+                        addFoodToMeal(meal: meal, food: food)
                         dismiss()
                     }) {
                         Image(systemName: "plus.circle")
@@ -40,5 +43,9 @@ struct AddFoodView: View {
             }
             .searchable(text: $searchText,placement: .toolbar, prompt: "Wyszukaj potrawy")
         }
+    }
+    
+    func addFoodToMeal(meal: Meal, food: Food){
+        meal.foods.append(food)
     }
 }

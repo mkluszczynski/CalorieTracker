@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "2881BCA7-FA39-473B-A365-171A014245EF"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "855F2A96-108A-44E9-8E53-649831E472A5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../var/folders/pz/s20q3vlx0jl8qwzxg0hb8l_00000gn/T/swift-generated-sources/@__swiftmacro_14CalorieTracker3Day5ModelfMm_.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1"
+            endingLineNumber = "1"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "855F2A96-108A-44E9-8E53-649831E472A5 - 97996466d99dc53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalorieTracker.Day.init(date: Foundation.Date) -&gt; CalorieTracker.Day"
+                  moduleName = "CalorieTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///var/folders/pz/s20q3vlx0jl8qwzxg0hb8l_00000gn/T/swift-generated-sources/@__swiftmacro_14CalorieTracker3Day5ModelfMm_.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2"
+                  endingLineNumber = "2"
+                  offsetFromSymbolStart = "118">
+               </Location>
+               <Location
+                  uuid = "855F2A96-108A-44E9-8E53-649831E472A5 - 97996466d99dc53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalorieTracker.Day.init(date: Foundation.Date) -&gt; CalorieTracker.Day"
+                  moduleName = "CalorieTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///var/folders/pz/s20q3vlx0jl8qwzxg0hb8l_00000gn/T/swift-generated-sources/@__swiftmacro_14CalorieTracker3Day5ModelfMm_.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2"
+                  endingLineNumber = "2"
+                  offsetFromSymbolStart = "103">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "252A0288-44B1-41B1-BC27-AC3D1646B2F2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../var/folders/pz/s20q3vlx0jl8qwzxg0hb8l_00000gn/T/swift-generated-sources/@__swiftmacro_14CalorieTracker3Day5ModelfMm_.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2"
+            endingLineNumber = "2"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "252A0288-44B1-41B1-BC27-AC3D1646B2F2 - 97996466d99dc53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalorieTracker.Day.init(date: Foundation.Date) -&gt; CalorieTracker.Day"
+                  moduleName = "CalorieTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///var/folders/pz/s20q3vlx0jl8qwzxg0hb8l_00000gn/T/swift-generated-sources/@__swiftmacro_14CalorieTracker3Day5ModelfMm_.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2"
+                  endingLineNumber = "2"
+                  offsetFromSymbolStart = "103">
+               </Location>
+               <Location
+                  uuid = "252A0288-44B1-41B1-BC27-AC3D1646B2F2 - 330bdc123a076172"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalorieTracker.Day.init(backingData: any SwiftData.BackingData&lt;Self.SwiftData.BackingData.Model == CalorieTracker.Day&gt;) -&gt; CalorieTracker.Day"
+                  moduleName = "CalorieTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///var/folders/pz/s20q3vlx0jl8qwzxg0hb8l_00000gn/T/swift-generated-sources/@__swiftmacro_14CalorieTracker3Day5ModelfMm_.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2"
+                  endingLineNumber = "2"
+                  offsetFromSymbolStart = "45">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

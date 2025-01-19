@@ -1,10 +1,16 @@
 import SwiftUI
 
+@available(iOS 17, *)
 struct MealListView: View {
-    @EnvironmentObject var mealStore: MealStore
+    
+    var meals: [Meal]
+    
+    var sortedMeals: [Meal] {
+        meals.sorted { $0.order < $1.order }
+    }
 
     var body: some View {
-        List(mealStore.meals) { meal in
+        List(sortedMeals) { meal in
             NavigationLink(value: meal) {
                 VStack(alignment: .leading, spacing: 10) {
                     Text(meal.name)
