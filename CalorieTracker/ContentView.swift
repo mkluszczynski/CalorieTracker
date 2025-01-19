@@ -17,7 +17,6 @@ struct ContentView: View {
         NavigationStack {
             VStack(alignment: .center) {
                 Text("🍏 FitTracker")
-//                    .font(.title)
                     .padding()
                 DatePicker("Wybierz datę:", selection: $date, in: ...Date(), displayedComponents: .date)
                     .padding(.horizontal)
