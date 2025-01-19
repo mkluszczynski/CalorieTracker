@@ -13,13 +13,13 @@ Simple app to track your daily nutrition
 
 <!-- ![Meal list](/CalorieTracker/Assets.xcassets/CalorieTracker-MealList.imageset/CalorieTracker-MealList.png) -->
 
-<img src="/CalorieTracker/Assets.xcassets/CalorieTracker-MealList.imageset/CalorieTracker-MealList.png" width="100" height="100">
+<img src="/CalorieTracker/Assets.xcassets/CalorieTracker-MealList.imageset/CalorieTracker-MealList.png" width="300">
 
 ### Product List
 
 <!-- ![Product list](/CalorieTracker/Assets.xcassets/CalorieTracker-ProductList.imageset/CalorieTracker-ProductList.png) -->
 
-<img src="/CalorieTracker/Assets.xcassets/CalorieTracker-ProductList.imageset/CalorieTracker-ProductList.png" width="100" height="100">
+<img src="/CalorieTracker/Assets.xcassets/CalorieTracker-ProductList.imageset/CalorieTracker-ProductList.png" width="300">
 
 ### Used stack
 
