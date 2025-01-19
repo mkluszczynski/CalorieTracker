@@ -1,63 +1,81 @@
-//
-//  ContentView.swift
-//  CalorieTracker
-//
-//  Created by Mateusz Kluszczynski on 09/01/2025.
-//
-
 import SwiftUI
+import SwiftData
 
+@available(iOS 17, *)
 struct ContentView: View {
+    @State var date: Date = Date()
     
-    @EnvironmentObject var mealStore: MealStore
-    @StateObject var addFoodViewModel = AddFoodViewModel()
+    @Environment(\.modelContext) private var modelContext
+    @Query() var days: [Day] = []
+    
+    var day: Day {
+        getDay();
+    }
     
     
     var body: some View {
-        NavigationStack{
-            VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
+        NavigationStack {
+            VStack(alignment: .center) {
                 Text("🍏 FitTracker")
-                MealListView()
-                NutritionGroupView()
+                    .padding()
+                DatePicker("Wybierz datę:", selection: $date, in: ...Date(), displayedComponents: .date)
+                    .padding(.horizontal)
+                
+                MealListView(meals: day.meals)
+                NutritionGroupView(meals: day.meals)
             }
             .navigationDestination(for: Meal.self){ meal in
                 AddFoodView(meal: meal)
             }
         }
+        .onAppear{
+//           deleteAllRecords()
+        }
         
     }
-}
-
-#Preview {
-    ContentView()
-        .environmentObject(MealStore())
-}
-        
-class MealStore: ObservableObject{
-    @Published var appName = "Fitapp"
-    @Published var meals: [Meal] = [
-        Meal(name: "Śnadanie", foods: [Food(name: "Egg", icon: "🥚", calories: 80, proteins: 6, fat: 5, carbohydrates: 1)]),
-        Meal(name: "Drugie śniadanie", foods: []),
-        Meal(name: "Obiad", foods: []),
-        Meal(name: "Kolacja", foods: [])
-    ]
-}
-
-struct Food: Identifiable, Hashable {
-    let id: UUID = UUID()
-    let name: String
-    let icon: String
-    let calories: Int
-    let proteins: Int
-    let fat: Int
-    let carbohydrates: Int
-}
-
-struct Meal: Identifiable, Hashable {
-    let id: UUID = UUID()
-    let name: String
-    let foods: [Food]
     
+    func getDay() -> Day{
+        let res = days.first(where: {Calendar.current.isDate($0.date, inSameDayAs: date)})
+        if(res == nil){
+            return createDay()
+        }
+        return res!
+    }
+    
+    func createDay() -> Day {
+        let newDay = Day(date: date)
+        
+        let newMeals: [Meal] = [
+            Meal(name: "Śniadanie", order: 1),
+            Meal(name: "Drugie śniadanie", order: 2),
+            Meal(name: "Obiad", order: 3),
+            Meal(name: "Kolacja", order: 4),
+        ]
+        
+        for meal in newMeals {
+            modelContext.insert(meal)
+        }
+        
+        newDay.meals = newMeals
+        
+        modelContext.insert(newDay)
+        
+        return newDay
+    }
+    
+    private func deleteAllRecords() {
+        do {
+            let fetchDescriptor = FetchDescriptor<Day>() 
+            let items = try modelContext.fetch(fetchDescriptor)
+            
+            for item in items {
+                modelContext.delete(item)
+            }
+            
+            try modelContext.save()
+        } catch {
+            print("Error deleting all records: \(error)")
+        }
+    }
 }
-
 
